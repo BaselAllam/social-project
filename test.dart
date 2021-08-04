@@ -11,19 +11,17 @@
 
 void main() {
 
-  String name = 'ahmed';
+  List x = [10, 20, 10, 30, 'ahmed', true];
 
-  String email = 'ahmed.com';
+  List<List<List>> y = [
+    [
+      ['10', '20']
+    ],
+    [
+      ['300', '600']
+    ]
+  ];
 
-  String age = '20';
 
-  bool isMarried = false;
-
-  double height = 200.5 + double.parse(age);
-
-  print('Name is $name , Age is $age, email is $email, height is ' + height.toString());
-
+  print(y);
 }
-
-
-// 
