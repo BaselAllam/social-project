@@ -1,27 +1,64 @@
-// Data Types
-    // String => represnt any character UTF-16
-    // Num
-      // int
-      // double
-    // bool
-    // list 
-    // set
-    // Map
+
+// void main() {
+
+//   Map<int, Map<String, dynamic>> std = {
+//     1 : {
+//       'name' : 'ahmed',
+//       'email' : 'ahmed.com',
+//       'age' : 20,
+//       'friends' : [
+//         'ahmed',
+//         'mahmoud'
+//       ],
+//     },
+//     2 : {
+//       'name' : 'ali',
+//       'email' : 'ali.com',
+//       'age' : 30,
+//       'friends' : [
+//         'ahmed',
+//       ],
+//     },
+//     3 : {
+//       'name' : 'sayed',
+//       'email' : 'sayed.com',
+//       'age' : 210,
+//       'friends' : [
+//         'ahmed',
+//         'mahmoud',
+//         'mahmoud'
+//       ],
+//     },
+//   };
+
+  
+
+// }
+
 
 
 void main() {
 
-  List x = [10, 20, 10, 30, 'ahmed', true];
 
-  List<List<List>> y = [
-    [
-      ['10', '20']
-    ],
-    [
-      ['300', '600']
-    ]
-  ];
+  int x = 10;
 
+  int y = 20;
 
-  print(y);
+  // () => header 
+
+  // {} => body
+
+  if(x != y) {
+    print('its ==');
+    if(x < y) {
+      print('im nesterd');
+    }else{
+      print('its >');
+    }
+  }else if(x > y) {
+    print('its >');
+  }else{
+    print('its !=');
+  }
+
 }
