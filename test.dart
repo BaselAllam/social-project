@@ -82,10 +82,18 @@ List<Map<String, dynamic>> data = [
     'success' : true
   },
   {
-    'name' : 'std1',
+    'name' : 'std3',
     'scores' : {
       'math' : 250,
       'science' : 350,
+    },
+    'success' : true
+  },
+  {
+    'name' : 'std4',
+    'scores' : {
+      'math' : 150,
+      'science' : 50,
     },
     'success' : true
   },
