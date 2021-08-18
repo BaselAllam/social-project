@@ -1,29 +1,44 @@
+import 'demodata.dart';
 
-// Models
-  // User
-    // User Model
-    // User Controller
-  // Post
-    // Post Model
-    // Post Controller
-  // Pages
-    // Pages Model
-    // Pages Controller
+main() {
 
 
-// -------------- //
+  user.forEach((key, value) {
+    User newUser = createUser(value);
+  });
 
-// OOP:
-  // class
-  // object
-  // constructor & named constructor
-  // class methods
-  // Access Modifier
-  // Inheritence
-  // Multiple Inheritence
+}
+
+User createUser(Map<String, dynamic> data) {
+  User x = User(
+    data['name'],
+    data['age'],
+    data['emails']
+  );
+  return x;
+}
 
 
-// Read about Design Pattern
-// Read about OOP
-// Difference Between ( Object, Instance )
-// Prototype for Project
+class User{
+  String? name;
+  int? age;
+  String? email;
+
+  User(this.name, this.age, email) {
+    this.email = updateEmail(email);
+  } //Default Constructor
+
+  userData() {
+    print('$name $age $email');
+  }
+
+  userEat() {
+    print('$name is Eating');
+  }
+
+  String updateEmail(String emails) {
+    return '$emails.com';
+  }
+}
+
+// Constructor or Initializer
