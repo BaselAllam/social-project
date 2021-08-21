@@ -2,20 +2,21 @@ import 'demodata.dart';
 
 main() {
 
+  List<User> allUsers = [];
 
   user.forEach((key, value) {
-    User newUser = createUser(value);
+    User newUser = User.fromMap(value);
+    allUsers.add(newUser);
   });
 
-}
+  num sum = 0;
 
-User createUser(Map<String, dynamic> data) {
-  User x = User(
-    data['name'],
-    data['age'],
-    data['emails']
-  );
-  return x;
+  for(User user in allUsers) {
+    sum += user.age!;
+  }
+
+  print(sum);
+
 }
 
 
@@ -26,7 +27,15 @@ class User{
 
   User(this.name, this.age, email) {
     this.email = updateEmail(email);
-  } //Default Constructor
+  }
+
+   factory User.fromMap(Map<String, dynamic> i) {
+    return User(
+      i['name'],
+      i['age'],
+      i['email']
+    );
+  }
 
   userData() {
     print('$name $age $email');
@@ -40,5 +49,3 @@ class User{
     return '$emails.com';
   }
 }
-
-// Constructor or Initializer
