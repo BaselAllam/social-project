@@ -24,10 +24,12 @@ void main() {
       value['age'],
       allMembers,
     );
+    newStd.setCounter(10);
+    print(newStd.counterValue);
     allStds.add(newStd);
   });
 
-  print(allStds);
+  // print(allStds);
 }
 
 
@@ -37,8 +39,22 @@ class Std{
   String email;
   int age;
   List<FamilyMember> families;
+  static int _counter = 0;
 
-  Std(this.name, this.email, this.age, this.families);
+  int get counterValue => _counter;
+
+  int getCounter() {
+    return _counter;
+  }
+
+  int setCounter(int newValue) {
+    _counter = newValue;
+    return _counter;
+  }
+
+  Std(this.name, this.email, this.age, this.families) {
+    _counter++;
+  }
 
 
   factory Std.fromMap(Map<String, dynamic> i) {
@@ -66,3 +82,10 @@ class FamilyMember{
     );
   }
 }
+
+// Access Modifier
+  // Global , Local
+              // Public, Private  
+                        // Getter , Setter
+
+              // Read & Write
