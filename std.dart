@@ -1,11 +1,3 @@
-// class with named constructor and default constructor for
-    // 1- user
-    // 2- std
-    // 3- family memeber
-
-
-// loop on maps for each class separtely 
-// increament the counter variable in each class when create a new object
 import 'demodata.dart';
 
 void main() {
