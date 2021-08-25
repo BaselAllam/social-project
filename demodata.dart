@@ -71,3 +71,10 @@ Map<String, dynamic> newMember = {
           'name' : 'sayed sister',
           'age' : 1
 };
+
+
+
+// who student //
+// new member data //
+// create new obj from FamilyMember //
+// add this obj in std familymemberlist //

@@ -17,11 +17,19 @@ void main() {
       allMembers,
     );
     newStd.setCounter(10);
-    print(newStd.counterValue);
     allStds.add(newStd);
   });
 
-  // print(allStds);
+  FamilMemberController controller = FamilMemberController();
+
+  print(allStds[0].families);
+
+  controller.addNewFamilyMember(allStds[0], newMember);
+  controller.addNewFamilyMember(allStds[1], newMember);
+
+  // addNewFamilyMember(allStds[0], newMember);
+
+  print(allStds[0].families);
 }
 
 
@@ -75,9 +83,14 @@ class FamilyMember{
   }
 }
 
-// Access Modifier
-  // Global , Local
-              // Public, Private  
-                        // Getter , Setter
 
-              // Read & Write
+class FamilMemberController{
+
+  addNewFamilyMember(Std std, Map<String, dynamic> newMemberData) {
+
+    FamilyMember newMember = FamilyMember.fromMap(newMemberData);
+
+    std.families.add(newMember);
+  }
+  
+}
