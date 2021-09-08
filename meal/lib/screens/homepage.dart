@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:meal/demodata.dart';
+import 'package:meal/screens/all.dart';
 import 'package:meal/theme/sharedColor.dart';
 import 'package:meal/theme/sharedFontStyle.dart';
 import 'package:meal/widgets/categoryWidget.dart';
 import 'package:meal/widgets/restaurantwidget.dart';
+import 'package:meal/widgets/shoppingcartbutton.dart';
 
 
 
@@ -26,9 +28,7 @@ class _HomePageState extends State<HomePage> {
         ),
         iconTheme: IconThemeData(color: Colors.black),
         actions: [
-          Icon(
-            Icons.shopping_cart,
-          ),
+          ShoppingCartButton()
         ],
       ),
       body: ListView(
@@ -86,6 +86,9 @@ class _HomePageState extends State<HomePage> {
         'view all',
         style: TextStyle(color: mainColor, fontSize: 18),
       ),
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (_) {return All(title);}));
+      },
     );
   }
 }
