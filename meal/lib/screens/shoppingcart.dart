@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal/demodata.dart';
+import 'package:meal/screens/checkout.dart';
 import 'package:meal/theme/sharedColor.dart';
 import 'package:meal/theme/sharedFontStyle.dart';
 import 'package:meal/widgets/backbutton.dart';
@@ -39,7 +40,9 @@ class _ShoppingCartState extends State<ShoppingCart> {
           item('Total', primaryTextStyle, '20\$', TextStyle(color: mainColor, fontSize: 20.0)),
           Column(
             children: [
-              CustomButton('CheckOut', () {})
+              CustomButton('CheckOut', () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) {return CheckOut();}));
+              })
             ],
           ),
         ],

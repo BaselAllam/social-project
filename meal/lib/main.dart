@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal/screens/homepage.dart';
+import 'package:meal/screens/bottomnavbar/bottomnavbar.dart';
 
 
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: BottomNavBar(),
       debugShowCheckedModeBanner: false,
     );
   }

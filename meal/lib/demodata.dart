@@ -2,20 +2,20 @@
 
 List<Map<String, dynamic>> categoryData = [
   {
-    'txt' : 'Burger',
-    'img' : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ94h8ca8bXe1Mi67L9v9yQVkppqcwAvC9v8A&usqp=CAU'
+    'txt' : 'Food',
+    'img' : 'https://www.ahfesproject.com/app/uploads/2019/11/Healthy-Food-colourful-plate-554x370.jpg'
   },
   {
-    'txt' : 'Pizza',
-    'img' : 'https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Pizza-from-Scratch_EXPS_FT20_8621_F_0505_1_home.jpg'
+    'txt' : 'Beverages',
+    'img' : 'https://shop.pall.com/INTERSHOP/static/WFS/PALL-PALLUS-Site/-/PALL/en_US/images/Categories/Food-Beverage/intershop/fb-segment-quality-juice.jpg'
   },
   {
-    'txt' : 'Pasta',
-    'img' : 'https://www.halfbakedharvest.com/wp-content/uploads/2019/05/20-Minute-Garlic-Basil-Brown-Butter-Pasta-1.jpg'
+    'txt' : 'Desserts',
+    'img' : 'https://img.delicious.com.au/2_6iOIWk/del/2019/07/dark-chocolate-self-saucing-pudding-110154-2.jpg'
   },
   {
-    'txt' : 'Dessert',
-    'img' : 'https://static.onecms.io/wp-content/uploads/sites/23/2021/01/07/Best-romantic-desserts-2000.jpg'
+    'txt' : 'Promotions',
+    'img' : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLhrSCJSA4p-W9Kg5wAbt7yjvMU9sZkxrCQw&usqp=CAU'
   },
 ];
 
