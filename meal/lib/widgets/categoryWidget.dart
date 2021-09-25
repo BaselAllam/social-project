@@ -17,26 +17,30 @@ class CategoryWidget extends StatefulWidget {
 class _CategoryWidgetState extends State<CategoryWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Card(
+      elevation: 5.0,
       margin: EdgeInsets.all(10.0),
-      width: 100.0,
-      child: Column(
-        children: [
-          Container(
-            height: 75.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              image: DecorationImage(
-                image: NetworkImage(widget.img),
-                fit: BoxFit.fill
-              )
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+      child: Container(
+        width: 100.0,
+        child: Column(
+          children: [
+            Container(
+              height: 75.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.0),
+                image: DecorationImage(
+                  image: NetworkImage(widget.img),
+                  fit: BoxFit.fill
+                )
+              ),
             ),
-          ),
-          Text(
-            '${widget.txt}',
-            style: secondaryTextStyle,
-          )
-        ],
+            Text(
+              '${widget.txt}',
+              style: secondaryTextStyle,
+            )
+          ],
+        ),
       ),
     );
   }

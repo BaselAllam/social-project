@@ -38,7 +38,7 @@ class _AllState extends State<All> {
         itemCount: widget.className == 'Popular Restaurant' ? restaurantImage.length : categoryData.length,
         itemBuilder: (context, index) {
           return RestaurantWidget(
-             widget.className == 'Popular Restaurant' ? restaurantImage[index] : categoryData[index]['img']
+             widget.className == 'Popular Restaurant' ? restaurantImage[index] : categoryData[index]['img'], false
           );
         },
       ),

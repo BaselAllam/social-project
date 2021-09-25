@@ -38,13 +38,7 @@ class _WishlistState extends State<Wishlist> {
               style: primaryTextStyle,
             ),
             for(int i = 0; i < 3; i++)
-            RestaurantWidget(restaurantImage[i]),
-            Text(
-              'Wishlisted Meals\n',
-              style: primaryTextStyle,
-            ),
-            for(int i = 0; i < 3; i++)
-            RestaurantWidget(categoryData[i]['img'])
+            RestaurantWidget(restaurantImage[i], false),
           ],
         ),
       ),

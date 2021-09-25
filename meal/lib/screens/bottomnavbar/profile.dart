@@ -38,7 +38,7 @@ class _ProfileState extends State<Profile> {
               width: MediaQuery.of(context).size.width/3,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage('https://lh3.googleusercontent.com/proxy/7k0FD34Vvp67UFXEH0vFq4nreucEW3skEs5HiYqgL1T3ZZjKYRMA220kFb3f4zPPURG21y-tZvoW8J58eYxPT5LW7dpYaDbkXs0SWirlcTWa'),
+                  image: NetworkImage('https://st.depositphotos.com/1007566/1246/v/600/depositphotos_12467429-stock-illustration-cartoon-chef.jpg'),
                   fit: BoxFit.fill
                 ),
                 shape: BoxShape.circle

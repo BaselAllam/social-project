@@ -4,7 +4,7 @@ import 'package:meal/theme/sharedFontStyle.dart';
 
 
 
-Container field(String label, IconData icon, TextInputType type, TextEditingController controller, Key key, { bool obSecure = false, Widget? suffix}) {
+Container field(String label, IconData icon, TextInputType type, TextEditingController controller, Key key, { bool obSecure = false, Widget? suffix, Function? onSubmit}) {
   return Container(
     margin: EdgeInsets.all(10.0),
     decoration: BoxDecoration(
@@ -35,6 +35,9 @@ Container field(String label, IconData icon, TextInputType type, TextEditingCont
       keyboardType: type,
       obscureText: obSecure,
       controller: controller,
+      onFieldSubmitted: (value) {
+        onSubmit!();
+      },
     ),
   );
 }

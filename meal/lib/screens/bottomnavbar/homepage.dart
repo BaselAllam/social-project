@@ -4,6 +4,7 @@ import 'package:meal/screens/all.dart';
 import 'package:meal/theme/sharedColor.dart';
 import 'package:meal/theme/sharedFontStyle.dart';
 import 'package:meal/widgets/categoryWidget.dart';
+import 'package:meal/widgets/field.dart';
 import 'package:meal/widgets/restaurantwidget.dart';
 import 'package:meal/widgets/shoppingcartbutton.dart';
 
@@ -16,6 +17,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+TextEditingController searchController = TextEditingController();
+
+GlobalKey<FormState> searchKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +40,11 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [
+          field('Search', Icons.search, TextInputType.text, searchController, searchKey,
+          onSubmit: () {
+            Navigator.push(context, MaterialPageRoute(builder: (_) {return All('Search Result');}));
+          }
+          ),
           ListTile(
             title: Text(
               'Delivering to',
@@ -60,7 +71,7 @@ class _HomePageState extends State<HomePage> {
           ),
           item('Popular Restaurant'),
           for(String image in restaurantImage)
-          RestaurantWidget(image),
+          RestaurantWidget(image, false),
           item('Popular Meals'),
           Container(
             height: MediaQuery.of(context).size.height/3.5,
@@ -68,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
               itemCount: categoryData.length,
               itemBuilder: (context, index) {
-                return RestaurantWidget(categoryData[index]['img']);
+                return RestaurantWidget(categoryData[index]['img'], true);
               },
             ),
           ),

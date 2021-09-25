@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal/screens/bottomnavbar/bottomnavbar.dart';
 import 'package:meal/screens/signup.dart';
 import 'package:meal/theme/sharedColor.dart';
 import 'package:meal/theme/sharedFontStyle.dart';
@@ -75,6 +76,8 @@ bool passwordHidden = true;
                 () {
                   if(!mainKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(snack(Colors.red, 'Some Fileds Required'));
+                  }else{
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) {return BottomNavBar();}));
                   }
                 }
               ),

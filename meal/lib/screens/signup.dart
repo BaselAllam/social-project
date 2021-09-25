@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal/screens/bottomnavbar/bottomnavbar.dart';
 import 'package:meal/theme/sharedColor.dart';
 import 'package:meal/theme/sharedFontStyle.dart';
 import 'package:meal/widgets/backbutton.dart';
@@ -29,6 +30,10 @@ GlobalKey<FormState> mainKey = GlobalKey<FormState>();
 
 bool passwordHidden = true;
 
+String gender = '';
+
+DateTime birthDate = DateTime(2010);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,6 +62,48 @@ bool passwordHidden = true;
             ),
             field('Email Address', Icons.email, TextInputType.emailAddress, emailController, emailKey),
             field('User Name', Icons.account_circle, TextInputType.text, userNameController, userNamekey),
+            subItem(
+              'Gender ( $gender )',
+              PopupMenuButton(
+                child: Icon(Icons.arrow_downward, color: secondaryFontColor, size: 20.0),
+                itemBuilder: (BuildContext context) {
+                  return <PopupMenuEntry<String>>[
+                    PopupMenuItem(
+                      child: Text('Male'),
+                      value: 'Male',
+                    ),
+                    PopupMenuItem(
+                      child: Text('FeMale'),
+                      value: 'FeMale',
+                    ),
+                  ];
+                },
+                onSelected: (value) {
+                  setState(() {
+                    gender = value.toString();
+                  });
+                },
+              ),
+            ),
+            subItem(
+              'Birth Date ( ${birthDate.toString().substring(0, 10)} )',
+              IconButton(
+                icon: Icon(Icons.calendar_today),
+                color: secondaryFontColor,
+                iconSize: 20.0,
+                onPressed: () async {
+                  DateTime? selectedDate = await showDatePicker(
+                    context: context,
+                    firstDate: DateTime(1950),
+                    initialDate: DateTime(2010),
+                    lastDate: DateTime(2010)
+                  );
+                  setState(() {
+                    birthDate = selectedDate!;
+                  });
+                },
+              ),
+            ),
             field(
               'Password',
               Icons.lock,
@@ -100,6 +147,8 @@ bool passwordHidden = true;
                 () {
                   if(!mainKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(snack(Colors.red, 'Some Fileds Required'));
+                  }else{
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) {return BottomNavBar();}));
                   }
                 }
               ),
@@ -119,6 +168,12 @@ bool passwordHidden = true;
           ],
         ),
       ),
+    );
+  }
+  ListTile subItem(String title, Widget trailing) {
+    return ListTile(
+      title: Text('$title', style: secondaryTextStyle),
+      trailing: trailing
     );
   }
 }
