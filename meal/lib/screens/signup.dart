@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal/models/shared.dart';
 import 'package:meal/screens/bottomnavbar/bottomnavbar.dart';
 import 'package:meal/theme/sharedColor.dart';
 import 'package:meal/theme/sharedFontStyle.dart';
@@ -148,6 +149,7 @@ DateTime birthDate = DateTime(2010);
                   if(!mainKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(snack(Colors.red, 'Some Fileds Required'));
                   }else{
+                    Shared.saveLocal('user', true);
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) {return BottomNavBar();}));
                   }
                 }

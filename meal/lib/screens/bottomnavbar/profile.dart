@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:meal/theme/sharedColor.dart';
 import 'package:meal/theme/sharedFontStyle.dart';
 import 'package:meal/widgets/button.dart';
@@ -13,6 +16,9 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+
+File? image;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,8 +43,11 @@ class _ProfileState extends State<Profile> {
               height: 200.0,
               width: MediaQuery.of(context).size.width/3,
               decoration: BoxDecoration(
-                image: DecorationImage(
+                image: image == null ? DecorationImage(
                   image: NetworkImage('https://st.depositphotos.com/1007566/1246/v/600/depositphotos_12467429-stock-illustration-cartoon-chef.jpg'),
+                  fit: BoxFit.fill
+                ) : DecorationImage(
+                  image: FileImage(image!),
                   fit: BoxFit.fill
                 ),
                 shape: BoxShape.circle
@@ -47,7 +56,9 @@ class _ProfileState extends State<Profile> {
                 icon: Icon(Icons.add_a_photo),
                 color: Colors.black,
                 iconSize: 25.0,
-                onPressed: () {},
+                onPressed: () {
+                  pickImage(ImageSource.camera);
+                },
               ),
             ),
             Align(
@@ -109,5 +120,11 @@ class _ProfileState extends State<Profile> {
         ),
       ),
     );
+  }
+  pickImage(ImageSource source) async {
+    XFile? _pickedImage = await ImagePicker().pickImage(source: source);
+    setState(() {
+      image = File(_pickedImage!.path);
+    });
   }
 }

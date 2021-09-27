@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meal/models/shared.dart';
+import 'package:meal/screens/bottomnavbar/bottomnavbar.dart';
 import 'package:meal/screens/login.dart';
 
 
@@ -9,14 +11,35 @@ void main() {
 
 
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+bool isvalid = false;
+
+@override
+void initState() {
+  checkUser();
+  super.initState();
+}
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Login(),
+      home: isvalid == true ? BottomNavBar() : Login(),
       debugShowCheckedModeBanner: false,
     );
+  }
+  checkUser() async {
+
+    bool valid = await Shared.getFromLocal('user');
+    setState(() {
+      isvalid = valid;
+    });
   }
 }
 
