@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal/demodata.dart';
 import 'package:meal/screens/all.dart';
+import 'package:meal/screens/map.dart';
 import 'package:meal/theme/sharedColor.dart';
 import 'package:meal/theme/sharedFontStyle.dart';
 import 'package:meal/widgets/categoryWidget.dart';
@@ -42,7 +43,7 @@ GlobalKey<FormState> searchKey = GlobalKey<FormState>();
         children: [
           field('Search', Icons.search, TextInputType.text, searchController, searchKey,
           onSubmit: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) {return All('Search Result');}));
+            Navigator.push(context, MaterialPageRoute(builder: (_) {return SearchMap();}));
           }
           ),
           ListTile(
